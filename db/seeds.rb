@@ -13,9 +13,9 @@ Booking.destroy_all
 User.destroy_all
 
 
-natalia = User.create(email: "gattinati.ng@gmail.com", password: Ca145236*)
-facundo = User.create(email: "facundolanus@gmail.com", password: Ca145236*)
-camilo = User.create(email: "camilogzlez@gmail.com", password: Ca145236*)
+natalia = User.create(email: "gattinati.ng@gmail.com", password: "Ca145236*")
+facundo = User.create(email: "facundolanus@gmail.com", password: "Ca145236*")
+camilo = User.create(email: "camilogzlez@gmail.com", password: "Ca145236*")
 
 experience_1 = WineExperience.create(title: "Bodega Ruffini malbec tasting", description: "pruebe los vinos de la bodega ....", date: 01/30/2021, price: "1500", user: natalia)
 
