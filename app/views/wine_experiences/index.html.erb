@@ -1,11 +1,12 @@
 <h1>Wine Experiences!!!!</h1>
 
-<%= @wine_experiences.each do |we| %>
+<% @wine_experiences.each do |we| %>
   <div class="card-product">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="card-product-infos">
       <h2><%= we.title %></h2>
       <p><%= we.description %></p>
     </div>
+    <%= link_to "Details", wine_experience_path(we), class: "btn btn-secondary" %>
   </div>
 <% end %>
