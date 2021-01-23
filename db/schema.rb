@@ -10,24 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_01_23_180414) do
+ActiveRecord::Schema.define(version: 2021_01_23_191743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "experiences", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "date"
-    t.float "price"
-    t.bigint "user_id", null: false
-    t.bigint "winery_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_experiences_on_user_id"
-    t.index ["winery_id"], name: "index_experiences_on_winery_id"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,16 +27,16 @@ ActiveRecord::Schema.define(version: 2021_01_23_180414) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "wineries", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
+  create_table "wine_experiences", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "date"
+    t.float "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_wineries_on_user_id"
+    t.index ["user_id"], name: "index_wine_experiences_on_user_id"
   end
 
-  add_foreign_key "experiences", "users"
-  add_foreign_key "experiences", "wineries"
-  add_foreign_key "wineries", "users"
+  add_foreign_key "wine_experiences", "users"
 end
