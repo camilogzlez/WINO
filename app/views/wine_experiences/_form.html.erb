@@ -1,0 +1,8 @@
+<%= simple_form_for(wine_experience) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :price, as: :numeric %>
+
+    <%= f.submit "Submit", disable_with: 'Submiting...' %>
+<% end %>
+  
