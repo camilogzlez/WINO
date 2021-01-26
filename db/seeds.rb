@@ -14,25 +14,19 @@ User.destroy_all
 
 puts "creando tres seeds"
 
-<<<<<<< HEAD
-natalia = User.create(email: "gattinati.ng@gmail.com", password: "Ca145236*")
-facundo = User.create(email: "facundolanus@gmail.com", password: "Ca145236*")
-camilo = User.create(email: "camilogzlez@gmail.com", password: "Ca145236*")
-=======
 natalia = User.create!(email: "gattinati.ng@gmail.com", password: "Ca145236*")
 facundo = User.create!(email: "facundolanus@gmail.com", password: "Ca145236*")
 camilo = User.create!(email: "camilogzlez@gmail.com", password: "Ca145236*")
->>>>>>> master
 
-rufinni = WineExperience.create!(title: "Bodega Ruffinni malbec tasting", description: "pruebe los vinos de la bodega ....", date: Date.current, price: 1500, user: natalia)
+rufinni = WineExperience.create!(title: "Bodega Ruffinni malbec tasting", description: "pruebe los vinos de la bodega ....", date: Date.current, price: 1500, owner: natalia)
 
-francia = WineExperience.create!(title: "Vinos del Sur de Francia", description: "Realize un viaje a traves de los vinos ....", date: Date.current, price: 5000, user: facundo)
+francia = WineExperience.create!(title: "Vinos del Sur de Francia", description: "Realize un viaje a traves de los vinos ....", date: Date.current, price: 5000, owner: facundo)
 
-cafayate = WineExperience.create!(title: "Vinos del Cafayate ", description: "Deleitese con vinos de talla mundial ....", date: Date.current, price: 1800, user: camilo)
+cafayate = WineExperience.create!(title: "Vinos del Cafayate ", description: "Deleitese con vinos de talla mundial ....", date: Date.current, price: 1800, owner: camilo)
 
-Booking.create!(user: natalia, wine_experience: rufinni)
-Booking.create!(user: facundo, wine_experience: francia)
-Booking.create!(user: camilo, wine_experience: cafayate)
+Booking.create!(client: natalia, wine_experience: rufinni)
+Booking.create!(client: facundo, wine_experience: francia)
+Booking.create!(client: camilo, wine_experience: cafayate)
 
 puts "tres seeds creadas"
 
