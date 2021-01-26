@@ -1,4 +1,9 @@
-<h1>Wine Experiences!!!!</h1>
+<div class="container mb-3">
+  <div class="row d-flex justify-content-between">
+    <h1 class="m-0">Wine Experiences!!!!</h1>
+    <%= link_to "New experience", new_wine_experience_path, class: "btn btn-primary" %>
+  </div>
+</div>
 
 <% @wine_experiences.each do |we| %>
   <div class="card-product">

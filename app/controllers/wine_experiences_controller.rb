@@ -1,3 +1,5 @@
+require 'date'
+
 class WineExperiencesController < ApplicationController
   before_action :experience_by_params_id, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index]
@@ -13,6 +15,18 @@ class WineExperiencesController < ApplicationController
     @wine_experience = WineExperience.new()
   end
 
+  def create
+    @wine_experience = WineExperience.new(wine_experience_params)
+    @wine_experience.user = current_user
+    @wine_experience.date = DateTime.now
+    if @wine_experience.save
+      redirect_to wine_experience_path(@wine_experience)
+    else
+      render :new
+    end
+  end
+  
+
   def update
     @wine_experience.update(wine_experience_params)
     @wine_experience.price = @wine_experience.price.to_i
@@ -20,7 +34,7 @@ class WineExperiencesController < ApplicationController
     if @wine_experience.save!
       redirect_to wine_experience_index_path
     else
-      render :new
+      render :edit
     end
   end
 
