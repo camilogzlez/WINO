@@ -6,4 +6,5 @@ class User < ApplicationRecord
   
   has_many :bookings
   has_many :wine_experiences
+  has_many :reservations, through: :wine_experiences, source: :bookings
 end
