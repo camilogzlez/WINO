@@ -1,0 +1,10 @@
+<div class="form_container">
+
+<%= simple_form_for [@wine_experience, @booking] do |f| %>
+
+  <%= f.input :wine_experience %>
+  <%= f.input :client %>
+  <%= f.button :submit, class: "btn-primary" %>
+<% end %>
+
+</div>
