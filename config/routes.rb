@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'wine_experiences#index'
+  root to: 'pages#home'
   devise_for :users
   resources :wine_experiences
 
