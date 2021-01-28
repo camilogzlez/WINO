@@ -43,5 +43,5 @@ initSweetalert('#sweet-alert-demo', {
   if (value) {
     const link = document.querySelector('#book-link');
     link.click();
-  }
+  } 
 });

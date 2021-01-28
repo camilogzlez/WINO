@@ -12,13 +12,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to wine_experiences_path
     else
-      render 'bookings/show'
+      render 'bookings/alert'
     end
   end
 
-   private
-
-  def booking_params
-    # params.require(:booking).permit(:user_id,:wine_experience_id)
-  end
 end
