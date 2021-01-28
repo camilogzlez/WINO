@@ -9,5 +9,10 @@
     <h2 class="card-trip-pricing">Precio: <%= @wine_experience.price %> Args.</h2>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
-  <h2><%= link_to "Buy", wine_experience_bookings_path(@wine_experience), method: :post, class: "btn btn-primary", data: {confirm:"Are you sure?"} %></h2>
+<div>
+<button id="sweet-alert-demo" class="btn btn-danger">Book</button>
+<%= link_to "", wine_experience_bookings_path(@wine_experience), method: :post, id: "delete-link", class: "hidden" %>
+
 </div>
+
+ 
