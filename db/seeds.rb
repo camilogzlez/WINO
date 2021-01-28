@@ -14,15 +14,9 @@ User.destroy_all
 
 puts "creando tres seeds"
 
-<<<<<<< HEAD
-natalia = User.create(email: "gattinati.ng@gmail.com", password: "Ca145236*")
-facundo = User.create(email: "facundolanus@gmail.com", password: "Ca145236*")
-camilo = User.create(email: "camilogzlez@gmail.com", password: "Ca145236*")
-=======
 natalia = User.create!(email: "gattinati.ng@gmail.com", password: "Ca145236*")
 facundo = User.create!(email: "facundolanus@gmail.com", password: "Ca145236*")
 camilo = User.create!(email: "camilogzlez@gmail.com", password: "Ca145236*")
->>>>>>> master
 
 rufinni = WineExperience.create!(title: "Bodega Ruffinni malbec tasting", description: "pruebe los vinos de la bodega ....", date: Date.current, price: 1500, user: natalia)
 
