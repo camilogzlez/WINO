@@ -1,8 +1,11 @@
-<%= simple_form_for(wine_experience) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description, as: :text %>
-    <%= f.input :price, as: :numeric %>
+<div class="pb-3">
+    <%= simple_form_for(wine_experience) do |f| %>
+        <%= f.input :title, class:"label" %>
+        <%= f.input :description, as: :text, class:"label" %>
+        <%= f.input :price, as: :numeric %>
+        <%= f.input :date %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
-    <%= f.submit "Submit", disable_with: 'Submiting...' %>
-<% end %>
-  
+        <%= f.submit "Submit", disable_with: 'Submiting...', class: "btn btn-success" %>
+    <% end %>
+</div>
