@@ -41,7 +41,7 @@ initSweetalert('#sweet-alert-demo', {
   icon: "success"
 }, (value) => {
   if (value) {
-    const link = document.querySelector('#delete-link');
+    const link = document.querySelector('#book-link');
     link.click();
   }
 });
