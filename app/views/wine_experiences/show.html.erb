@@ -1,12 +1,18 @@
 <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <img src="https://styla-prod-us.imgix.net/31601838dac1ed20f4696536b784d9c2?auto=format%2Ccompress&w=955.5&h=637.875&fit=crop&crop=faces%2Cedges" />
   <div class="card-trip-infos">
     <div>
+      <p class= date >Fecha: <%= @wine_experience.date %></p>
       <h2><%= @wine_experience.title %></h2>
       <p><%= @wine_experience.description %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= @wine_experience.price %> mil millones de dolares</h2>
+    <h2 class="card-trip-pricing">Precio: <%= @wine_experience.price %> Args.</h2>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
-  <%= link_to "Edit", edit_wine_experience_path(@wine_experience), class: "btn btn-primary m-3" %>
+<div>
+<button id="sweet-alert-demo" class="btn btn-danger">Book</button>
+<%= link_to "", wine_experience_bookings_path(@wine_experience), method: :post, id: "book-link", class: "hidden" %>
+
 </div>
+
+ 

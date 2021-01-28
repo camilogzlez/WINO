@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'wine_experiences#index'
+  root to: 'pages#home'
   devise_for :users
-  resources :wine_experiences
+  resources :wine_experiences do
+  resources :bookings, only: [:create]
+  end
 
 end

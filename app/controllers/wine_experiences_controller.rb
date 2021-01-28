@@ -18,7 +18,6 @@ class WineExperiencesController < ApplicationController
   def create
     @wine_experience = WineExperience.new(wine_experience_params)
     @wine_experience.owner = current_user
-    @wine_experience.date = DateTime.now
     if @wine_experience.save
       redirect_to wine_experience_path(@wine_experience)
     else
@@ -51,7 +50,8 @@ class WineExperiencesController < ApplicationController
   
 
   def wine_experience_params
-    params.require(:wine_experience).permit(:title, :description, :date, :price, :user)
+    params.require(:wine_experience).permit(:title, :description, :date, :price, photos: [])
   end
+
 
 end

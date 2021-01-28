@@ -1,11 +1,16 @@
+
 .card-trip {
+  margin: auto;
+  margin-top: 80px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  max-width: 800px;
+  border-radius: 5px;
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 400px;
   width: 100%;
   object-fit: cover;
 }
@@ -36,4 +41,16 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.buy-button{
+  margin-left: 40px;
+}
+
+.btn-danger {
+    background-color: #56070C;
+    border-color: #56070C;
+    margin-left: 83%;
+    width: 100px;
+    margin-bottom: 15px;
 }
