@@ -39,12 +39,9 @@
 
   <div class="banner mt-0" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(assets/banner-background-image);">
     <div class="container">
-      <h1>A perfect place to have a perfect Wine Experience</h1>
-<<<<<<< HEAD
-=======
-      <p>Enjoy the wonderful world of wine with all your senses </p>
->>>>>>> master
-      <%= link_to "See all experiences", wine_experiences_path, class: "btn btn-secondary" %>
+      <h1>El lugar perfecto para encontrar un vino perfecto</h1>
+      <p>Disfruta el ilimitado mundo del vino con todos tus sentidos</p>
+      <%= link_to "Encuentra todas las experiencias", wine_experiences_path, class: "btn btn-secondary" %>
     </div>
   </div>
 
@@ -55,7 +52,13 @@
         <a class="col-3" type="button" data-toggle="modal" data-target="#experience_modal_<%= experience.id %>" style="text-decoration: none;">
           
           <div class="card m-2">
-            <img class="card-img" src="https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg" alt="Card image cap">
+            <% if experience.photos.attached? %>
+                 <%= cl_image_tag experience.photos.first.key, alt: "Second slide", class: "card-img" %>
+                <% else %>
+               <img class="card-img" src="https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg" alt="Card image cap">
+
+            <% end %>
+
             <div class="card-body">
               <h5 class="card-title"><%= experience.title %></h5>
             </div>
@@ -79,7 +82,13 @@
               <div class="modal-body container">
                 <div class="row no-gutters">
                   <div class="col-sm-5">
-                    <img class="card-img" src="https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg" alt="">
+                    <% if experience.photos.attached? %>
+                 <%= cl_image_tag experience.photos.first.key, alt: "Second slide", class: "card-img" %>
+                <% else %>
+               <img class="card-img" src="https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg" alt="Card image cap">
+
+            <% end %>
+
                   </div>
                   <div class="">
                     <div class="card-body">
@@ -101,3 +110,15 @@
   </div>
 
 </div>
+
+<div class="footer">
+      <div class="footer-links">
+        <p>Seguinos en nuestras redes:</p>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+
+    </div>
