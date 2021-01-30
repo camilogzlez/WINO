@@ -25,19 +25,17 @@ require("channels")
 // External imports
 import "bootstrap";
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initSweetalert();
 });
 
-import { initSweetalert } from '../plugins/init_sweetalert';
-
 initSweetalert('#sweet-alert-demo', {
-  title: "You have booked this Wine Experience ",
-  text: "You will receive an email with your reservation details press 'OK' to confirm. Cheers!",
+  title: "Has reservado esta experiencia!",
+  text: "Recibirás un correo electrónico con los detalles de la reservación, presiona OK para confirmar. Cheers!",
   icon: "success"
 }, (value) => {
   if (value) {
@@ -45,3 +43,6 @@ initSweetalert('#sweet-alert-demo', {
     link.click();
   } 
 });
+// Internal imports, e.g:
+// import { initSelect2 } from '../components/init_select2';
+
