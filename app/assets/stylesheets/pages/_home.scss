@@ -17,7 +17,7 @@
 
 .banner p {
   font-size: 20px;
-  color: white;
+  color: rgb(46, 3, 3);
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
@@ -25,5 +25,14 @@
 p {
   font-size: 20px;
   text-align: center;
+  box-shadow: 5px 5px 5px rgb(170, 170, 170);
+}
 
+.bg-img {
+  background-size: cover;
+  background-position: center;
+}
+
+.button {
+  color: black;
 }

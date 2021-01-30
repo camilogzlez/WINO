@@ -40,6 +40,10 @@
   <div class="banner mt-0" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(assets/banner-background-image);">
     <div class="container">
       <h1>A perfect place to have a perfect Wine Experience</h1>
+<<<<<<< HEAD
+=======
+      <p>Enjoy the wonderful world of wine with all your senses </p>
+>>>>>>> master
       <%= link_to "See all experiences", wine_experiences_path, class: "btn btn-secondary" %>
     </div>
   </div>
@@ -48,9 +52,9 @@
 
     <div class="card-deck">
       <% @few_wine_experience.each do |experience| %>
-        <a class="col-3" type="button" data-toggle="modal" data-target="#exampleModal" style="text-decoration: none;">
-        
-          <div class="card p-0">
+        <a class="col-3" type="button" data-toggle="modal" data-target="#experience_modal_<%= experience.id %>" style="text-decoration: none;">
+          
+          <div class="card m-2">
             <img class="card-img" src="https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><%= experience.title %></h5>
@@ -63,7 +67,7 @@
         </a>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="experience_modal_<%= experience.id %>" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog  modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">

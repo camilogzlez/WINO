@@ -2,6 +2,7 @@
     <%= simple_form_for(wine_experience) do |f| %>
         <%= f.input :title, class:"label" %>
         <%= f.input :description, as: :text, class:"label" %>
+        <%= f.input :address %>
         <%= f.input :price, as: :numeric %>
         <%= f.input :date %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
