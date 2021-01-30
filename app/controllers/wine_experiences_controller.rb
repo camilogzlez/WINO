@@ -58,7 +58,7 @@ class WineExperiencesController < ApplicationController
   
 
   def wine_experience_params
-    params.require(:wine_experience).permit(:title, :description, :date, :price, photos: [])
+    params.require(:wine_experience).permit(:title, :description, :date, :price, :address, photos: [])
   end
 
 
