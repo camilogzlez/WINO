@@ -1,5 +1,8 @@
 <div class="card-trip">
-  <img src="https://styla-prod-us.imgix.net/31601838dac1ed20f4696536b784d9c2?auto=format%2Ccompress&w=955.5&h=637.875&fit=crop&crop=faces%2Cedges" />
+  <%# <img src="https://styla-prod-us.imgix.net/31601838dac1ed20f4696536b784d9c2?auto=format%2Ccompress&w=955.5&h=637.875&fit=crop&crop=faces%2Cedges" /> %>
+
+  <%= render '/wine_experiences/carrousel' %>
+  
   <div class="card-trip-infos">
     <div>
       <p class= date >Fecha: <%= @wine_experience.date %></p>
@@ -10,7 +13,7 @@
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 <div>
-<button id="sweet-alert-demo" class="btn btn-danger">Book</button>
+<button id="sweet-alert-demo" class="btn btn-danger">Reservá!</button>
 <%= link_to "", wine_experience_bookings_path(@wine_experience), method: :post, id: "book-link", class: "hidden" %>
 
 </div>
