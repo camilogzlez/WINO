@@ -7,21 +7,20 @@
 
 <div class="container mt-3 mb-3">
 
-    <div class="card-deck">
-      <% @wine_experiences.each do |experience| %>
-        <%= link_to wine_experience_path(experience), class: "col-3", style: "text-decoration: none" do %>
-          <div class="card p-0">
-            <img class="card-img" src="https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><%= experience.title %></h5>
-            </div>
-            <p style="text-decoration: none"><%= experience.description %></p>
-            <div class="card-footer">
-              <small class="text-muted"><i class="fas fa-dollar-sign"></i><strong><%= experience.price %></strong></small>
-            </div>
+  <div class="card-deck">
+    <% @wine_experiences.each do |experience| %>
+      <%= link_to wine_experience_path(experience), class: "col-3", style: "text-decoration: none" do %>
+        <div class="card p-0">
+          <img class="card-img" src="https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= experience.title %></h5>
           </div>
-        <% end %>
+          <p style="text-decoration: none"><%= experience.description %></p>
+          <div class="card-footer">
+            <small class="text-muted"><i class="fas fa-dollar-sign"></i><strong><%= experience.price %></strong></small>
+          </div>
+        </div>
       <% end %>
-    </div>
-
+    <% end %>
   </div>
+</div>
