@@ -26,11 +26,28 @@ require("channels")
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
   initMapbox();
+
+  initSweetalert('#sweet-alert-demo', {
+    title: "Has reservado esta experiencia!",
+    text: "Recibirás un correo electrónico con los detalles de la reservación, presiona OK para confirmar. Cheers!",
+    icon: "success"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#book-link');
+      link.click();
+    }
+  });
+
 });
+
+
+// Internal imports, e.g:
+// import { initSelect2 } from '../components/init_select2';
+
