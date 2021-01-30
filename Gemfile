@@ -37,6 +37,7 @@ gem 'devise', '~> 4.2'
 
 gem 'geocoder'
 gem 'dotenv-rails'
+gem 'faker'
 
 group :development, :test do
   gem 'pry-byebug'

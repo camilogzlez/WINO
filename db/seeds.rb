@@ -18,11 +18,11 @@ natalia = User.create!(email: "gattinati.ng@gmail.com", password: "Ca145236*")
 facundo = User.create!(email: "facundolanus@gmail.com", password: "Ca145236*")
 camilo = User.create!(email: "camilogzlez@gmail.com", password: "Ca145236*")
 
-rufinni = WineExperience.create!(title: "Bodega Ruffinni malbec tasting", description: "pruebe los vinos de la bodega ....", date: Date.current, price: 1500, owner: natalia)
+rufinni = WineExperience.create!(title: "Bodega Ruffinni malbec tasting", description: "pruebe los vinos de la bodega ....", date: Date.current, price: 1500, owner: natalia, address: Faker::Address.street_address )
 
-francia = WineExperience.create!(title: "Vinos del Sur de Francia", description: "Realize un viaje a traves de los vinos ....", date: Date.current, price: 5000, owner: facundo)
+francia = WineExperience.create!(title: "Vinos del Sur de Francia", description: "Realize un viaje a traves de los vinos ....", date: Date.current, price: 5000, owner: facundo, address: Faker::Address.street_address )
 
-cafayate = WineExperience.create!(title: "Vinos del Cafayate ", description: "Deleitese con vinos de talla mundial ....", date: Date.current, price: 1800, owner: camilo)
+cafayate = WineExperience.create!(title: "Vinos del Cafayate ", description: "Deleitese con vinos de talla mundial ....", date: Date.current, price: 1800, owner: camilo, address: Faker::Address.street_address )
 
 Booking.create!(client: natalia, wine_experience: rufinni)
 Booking.create!(client: facundo, wine_experience: francia)
