@@ -1,38 +1,30 @@
-<div class="container mb-3">
-  <div class="row d-flex justify-content-between">
-    <h1 class="m-0">Wine Experiences!!!!</h1>
-    <%= link_to "New experience", new_wine_experience_path, class: "btn btn-primary" %>
+<div class="bg-img" style="background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1515779689357-8b2b205287d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')">
+  <div class="container mb-1">
+      <%= link_to "Crea tu nueva wine experience", new_wine_experience_path, class: "btn btn-primary mt-3 button text-wrap" %>
+    <div class="row d-flex justify-content-between">
+      <h1 class="m-3" style="color: white">Elige tu Wine Experiences y empieza a disfrutar <i class="fas fa-wine-bottle" style="color: #943126"></i> <i class="fas fa-wine-glass" style="color: #943126"></i> </h1>
+    </div>
   </div>
-</div>
 
-<div class="container mt-3 mb-3">
+  <div class="container w-80">
 
-
-  <div class="card-deck">
-    <% @wine_experiences.each do |experience| %>
-      <%= link_to wine_experience_path(experience), class: "col-3", style: "text-decoration: none" do %>
-        <div class="card p-0">
-          <% if experience.photos.attached? %>
-          <%= cl_image_tag(experience.photos.first.key, class: "card-img") %>
-          <% else %>
-          <img class="card-img" src="https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg" alt="Card image cap">
-          <% end %>
-          
-          <div class="card-body">
-            <h5 class="card-title"><%= experience.title %></h5>
-          </div>
-          <p style="text-decoration: none"><%= experience.description %></p>
-          <div class="card-footer">
-            <small class="text-muted"><i class="fas fa-dollar-sign"></i><strong><%= experience.price %></strong></small>
-          </div>
-
-          </div>
-          <p style="text-decoration: none"><%= experience.description %></p>
-          <div class="card-footer">
-            <small class="text-muted"><i class="fas fa-dollar-sign"></i><strong><%= experience.price %></strong></small>
+    <div class="row justify-content">
+      <% @wine_experiences.each do |experience| %>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
+          <div>
+            <% if experience.photos.attached? %>
+              <div class="card text-center" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('<%= cl_image_path experience.photos.first.key, height: 200, crop: :fill  %>')">
+                <h2><%= link_to experience.title, wine_experience_path(experience), class: "text-decoration-none text-dark bg-light" %></h2>
+              </div>
+            <% else %>
+              <div class="card text-center" style="background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg')">
+                <h2><%= link_to experience.title, wine_experience_path(experience), class: "text-decoration-none text-dark bg-light" %></h2>
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>
-    <% end %>
+    </div>
+
   </div>
 </div>
