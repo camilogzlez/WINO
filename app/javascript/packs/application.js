@@ -24,12 +24,16 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { initMapbox } from '../plugins/init_mapbox';
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  initMapbox();
+
   initSweetalert('#sweet-alert-demo', {
     title: "Has reservado esta experiencia!",
     text: "Recibirás un correo electrónico con los detalles de la reservación, presiona OK para confirmar. Cheers!",
@@ -40,6 +44,7 @@ document.addEventListener('turbolinks:load', () => {
       link.click();
     }
   });
+
 });
 
 

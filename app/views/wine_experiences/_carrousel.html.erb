@@ -2,15 +2,18 @@
   <div class="carousel-inner">
   
     <div class="carousel-item active">
-    <%= cl_image_tag @wine_experience.photos[0].key, alt: "First slide", class: "d-block w-100", height: 550  %>
+    <% if @wine_experience.photos[2] %>
 
-    </div>
-    <div class="carousel-item">
-     <%= cl_image_tag @wine_experience.photos[1].key, alt: "Second slide", class: "d-block w-100", height: 550   %>
-    </div>
-    <div class="carousel-item">
-      <%= cl_image_tag @wine_experience.photos[2].key, alt: "Third slide", class: "d-block w-100", height: 550   %>
-    </div>
+      <%= cl_image_tag @wine_experience.photos[0].key, alt: "First slide", class: "d-block w-100", height: 550  %>
+
+      </div>
+      <div class="carousel-item">
+      <%= cl_image_tag @wine_experience.photos[1].key, alt: "Second slide", class: "d-block w-100", height: 550   %>
+      </div>
+      <div class="carousel-item">
+        <%= cl_image_tag @wine_experience.photos[2].key, alt: "Third slide", class: "d-block w-100", height: 550   %>
+      </div>
+    <% end %>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

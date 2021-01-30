@@ -1,6 +1,15 @@
 class PagesController < ApplicationController
   layout "home"
   def home
-    @few_wine_experience = WineExperience.last(8)
+    @wine_experiences = WineExperience.all
+    @few_wine_experience = @wine_experiences[0...8]
+
+    @markers = @wine_experiences.geocoded.map do |we|
+      {
+        lat: we.latitude,
+        lng: we.longitude
+      }
+    end
+ter
   end
 end
