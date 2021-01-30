@@ -5,9 +5,12 @@ class WineExperience < ApplicationRecord
   # has_many :users, through: :booking
   has_many_attached :photos
 
-  validates :title, :description, :date, :price,  presence: true
+  validates :title, :description, :date, :price, :address,  presence: true
   validates :price, numericality: { only_integer: true }
   # validate :date_cannot_be_in_the_past
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   def date_cannot_be_in_the_past
     if date.present? && date < Date.current

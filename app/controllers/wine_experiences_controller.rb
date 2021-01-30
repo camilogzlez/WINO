@@ -6,9 +6,17 @@ class WineExperiencesController < ApplicationController
 
   def index
     @wine_experiences = WineExperience.all
+
+
   end
 
   def show
+    # raise
+    @markers = [{
+      lat: @wine_experience.latitude,
+      lng: @wine_experience.longitude,
+      image_url: helpers.asset_url('wine-marker.png')
+    }]
   end
 
   def new
@@ -50,7 +58,7 @@ class WineExperiencesController < ApplicationController
   
 
   def wine_experience_params
-    params.require(:wine_experience).permit(:title, :description, :date, :price, photos: [])
+    params.require(:wine_experience).permit(:title, :description, :date, :price, :address, photos: [])
   end
 
 

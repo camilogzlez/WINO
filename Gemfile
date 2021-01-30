@@ -34,7 +34,10 @@ gem 'simple_form'
 gem 'cloudinary', '~> 1.16.0'
 
 gem 'devise', '~> 4.2'
- gem 'dotenv-rails'
+
+gem 'geocoder'
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

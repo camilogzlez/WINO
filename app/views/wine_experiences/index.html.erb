@@ -8,23 +8,23 @@
 
   <div class="container w-80">
 
-      <div class="row justify-content">
-        <% @wine_experiences.each do |experience| %>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
-            <div>
-              <% if experience.photos.attached? %>
-                <div class="card text-center" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('<%= cl_image_path experience.photos.first.key, crop: :fill  %>')">
-                </div>
-                  <h2><%= link_to experience.title, wine_experience_path(experience), class: "text-decoration-none text-light" %></h2>
-              <% else %>
-                <div class="card text-center" style="background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg')">
-                </div>
-                  <h2><%= link_to experience.title, wine_experience_path(experience), class: "text-decoration-none text-light" %></h2>
-              <% end %>
-            </div>
+    <div class="row justify-content">
+      <% @wine_experiences.each do |experience| %>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
+          <div>
+            <% if experience.photos.attached? %>
+              <div class="card text-center" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('<%= cl_image_path experience.photos.first.key, height: 200, crop: :fill  %>')">
+              </div>
+                <h2><%= link_to experience.title, wine_experience_path(experience), class: "text-decoration-none text-light" %></h2>
+            <% else %>
+              <div class="card text-center" style="background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg')">
+              </div>
+                <h2><%= link_to experience.title, wine_experience_path(experience), class: "text-decoration-none text-light" %></h2>
+            <% end %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
+    </div>
 
   </div>
 </div>
