@@ -5,12 +5,14 @@
   
   <div class="card-trip-infos">
     <div>
-      <p class= date >Fecha: <%= @wine_experience.date %></p>
-      <h2><%= @wine_experience.title %></h2>
-      <p><%= @wine_experience.description %></p>
+      <h1><%= @wine_experience.title %></h1>
+      <p class= description><%= @wine_experience.description %></p>
     </div>
-    <h2 class="card-trip-pricing">Precio: <%= @wine_experience.price %> Args.</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <div class="experience-info">
+      <h6 class= date >Fecha: <%= time_tag(@wine_experience.date) %></h6>
+      <h2 class="card-trip-pricing">Precio: <%= @wine_experience.price %> Args.</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
   </div>
 <div>
 <button id="sweet-alert-demo" class="btn btn-danger">Reservá!</button>
