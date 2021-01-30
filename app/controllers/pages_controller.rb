@@ -10,6 +10,5 @@ class PagesController < ApplicationController
         lng: we.longitude
       }
     end
-ter
   end
 end

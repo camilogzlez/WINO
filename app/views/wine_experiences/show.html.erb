@@ -20,6 +20,10 @@
 <div>
 <button id="sweet-alert-demo" class="btn btn-danger">Reservá!</button>
 <%= link_to "", wine_experience_bookings_path(@wine_experience), method: :post, id: "book-link", class: "hidden" %>
-
+  <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </div>
  
