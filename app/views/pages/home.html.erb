@@ -1,134 +1,47 @@
 <div style="postition: relative; ">
-
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon p-5" style="position:absolute">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <img src="assets/logo" alt="">
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-
-
-  <div class="banner mt-0" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(assets/banner-background-image);">
-    <div class="container">
+<%= render 'shared/navbar' %>
+  <div class="banner mt-0">
+  <%= render 'pages/banner' %>
+    <%# <div class="container">
       <h1>El lugar perfecto para encontrar un vino perfecto</h1>
       <p>Disfruta el ilimitado mundo del vino con todos tus sentidos</p>
       <%= link_to "Encuentra todas las experiencias", wine_experiences_path, class: "btn btn-secondary" %>
-    </div>
+    <%# </div> %>
+  </div>
+ 
+  <div class= "message">
+  <h4> Las experiencias de degustación no exigen conocimientos previos &#128640, equipo especializado &#129302, ni esfuerzo físico   &#127947 !. Aprende sobre el Vino, el unico riesgo es que te enamores &#128152 &#127863; </h4>
+  <h5>Revisá las ultimas experiencias!</h5>
+  <h2>&#128071</h2>
   </div>
 
-  <div class="container mt-3 mb-3">
-
-    <div class="card-deck">
+<div class="row">
+    
       <% @few_wine_experience.each do |experience| %>
-        <a class="col-3" type="button" data-toggle="modal" data-target="#experience_modal_<%= experience.id %>" style="text-decoration: none;">
-          
-          <div class="card m-2">
+        <div class="col-3-sm">
+          <div class="home-card">
+          <h5 class="experience-title"><%= link_to experience.title, wine_experience_path(experience) %></h5>
             <% if experience.photos.attached? %>
-                 <%= cl_image_tag experience.photos.first.key, alt: "Second slide", class: "card-img" %>
-                <% else %>
-               <img class="card-img" src="https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg" alt="Card image cap">
-
+             <%= cl_image_tag experience.photos.first.key, style:"background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))", class: "e" %>
+          <% else %>
+               <img class="e" src="https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fHdpbmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Card image cap" ,style ="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"> 
             <% end %>
-
-            <div class="card-body">
-              <h5 class="card-title"><%= experience.title %></h5>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"><i class="fas fa-dollar-sign"></i><strong><%= experience.price %></strong></small>
-
-            </div>
           </div>
-        </a>
-
-        <!-- Modal -->
-        <div class="modal fade" id="experience_modal_<%= experience.id %>" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><%= experience.title %></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body container">
-                <div class="row no-gutters">
-                  <div class="col-sm-5">
-                    <% if experience.photos.attached? %>
-                 <%= cl_image_tag experience.photos.first.key, alt: "Second slide", class: "card-img" %>
-                <% else %>
-               <img class="card-img" src="https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg" alt="Card image cap">
-
-            <% end %>
-
-                  </div>
-                  <div class="">
-                    <div class="card-body">
-                      <p class="card-text"><%= experience.description %></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer justify-content-between">
-                <small class="text-muted"><i class="fas fa-dollar-sign"></i><strong><%= experience.price %></strong></small>
-                <%= link_to "More details", wine_experience_path(experience), class: "btn btn-success" %>
-              </div>
-            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-
-  </div>
-
-</div>
-
+              <% end %>
   
-  <div class="container mb-3">
-    <div id="map"
-      style="width: 100%; height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
+ </div>
+  
+
 
 <div class="footer">
-      <div class="footer-links">
-        <p>Seguinos en nuestras redes:</p>
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-      </div>
-
-    </div>
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+    «El vino siembra poesía en los corazones.» Dante Alighieri. <i class="fas fa-heart"></i> WINO
+  </div>
+</div>
 </div>
