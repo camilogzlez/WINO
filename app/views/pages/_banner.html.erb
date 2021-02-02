@@ -1,0 +1,42 @@
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+  
+    <div class="carousel-item active">
+      <%= image_tag("https://images.unsplash.com/photo-1548025396-689d647d00c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1047&q=80", style: 'display: block; margin: auto; width: 100%; height:900px;')%>
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class= "carrousel-title">DEGUSTA LOS MEJORES VINOS</h5>
+          <p  class= "carrousel-p">En tu ciudad, en tu barrio!</p>
+          <h2><%= link_to "Todas las experiencias", wine_experiences_path, class: "btn btn-primary" %></h2>
+        </div>
+      </div>
+      <div class="carousel-item">
+      <%= image_tag("https://images.unsplash.com/photo-1423483641154-5411ec9c0ddf?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8YXJnZW50aW5pYW4lMjB3aW5lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", style: 'display: block; margin: auto; width: 100%; height:900px;') %>
+       <div class="carousel-caption d-none d-md-block">
+          <h5 class= "carrousel-title">DESDE NUESTROS SUELOS</h5>
+          <p class= "carrousel-p">Desde nuestras manos!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+       <%= image_tag("https://images.unsplash.com/photo-1513618827672-0d7c5ad591b1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8d2luZSUyMHRhc3Rpbmd8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60", style: 'display: block; margin: auto; width: 100%; height:900px;') %>
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class= "carrousel-title">TENTATE POR UNO DE LOS MEJORES VINOS DEL MUNDO</h5>
+          <p class= "carrousel-p">Sin ningun conocimiento previo! </p>
+        </div>
+      </div>
+        <div class="carousel-item">
+       <%= image_tag("https://images.unsplash.com/photo-1558565850-13a967c4519f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjQwfHx3aW5lJTIwdGFzdGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", style: 'display: block; margin: auto; width: 100%; height:900px;') %>
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class= "carrousel-title">ACOMPAÑADO POR CONOCEDORES</h5>
+          <p class= "carrousel-p">Dispuestos y felices de recibirte!</p>
+        </div>
+      </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
