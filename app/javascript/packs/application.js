@@ -30,6 +30,8 @@ import { initSweetalert } from '../plugins/init_sweetalert';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
+import "../plugins/init_flatpickr";
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -52,7 +54,5 @@ document.addEventListener('turbolinks:load', () => {
 
 });
 
-
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
