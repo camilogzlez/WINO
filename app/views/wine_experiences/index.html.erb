@@ -1,30 +1,69 @@
-<div class="bg-img" style="background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1515779689357-8b2b205287d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')">
-  <div class="container mb-1">
-      <%= link_to "Crea tu nueva wine experience", new_wine_experience_path, class: "btn btn-success mt-3 button" %>
-    <div class="row d-flex justify-content-between">
-      <h1 class="m-3" style="color: white">Elige tu Wine Experiences y empieza a disfrutar <i class="fas fa-wine-bottle" style="color: #943126"></i> <i class="fas fa-wine-glass" style="color: #943126"></i> </h1>
-    </div>
+
+<%= render 'shared/navbar' %>
+ 
+  <div >
+  <h2 class= "index-message"> TODAS LAS EXPERIENCIAS &#127863; </h2>
+ 
   </div>
-
-  <div class="container w-80">
-
-    <div class="row justify-content">
+<div class ="supercontainer">
+<div class="row">
       <% @wine_experiences.each do |experience| %>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
-          <div>
+        <div>
+          <div class="index-card">
             <% if experience.photos.attached? %>
-              <div class="card text-center" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('<%= cl_image_path experience.photos.first.key, height: 200, crop: :fill  %>')">
+             <%= cl_image_tag experience.photos.first.key, style:"background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))", class: "f" %>
+               <% else %>
+                 <img class="f" src="https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fHdpbmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Card image cap" ,style ="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"> 
+               <% end %>
+             <div class="card-product-infos">
+             
+               <h2><%= link_to experience.title, wine_experience_path(experience) %></h2>
+               <p class="index-card-description"><%= experience.description %></p>
+               <p>&#128349 2hs</p>
+               <p>&#10004 Cancelación gratuita</p>
+               <p>&#128172 Español/Ingles</p>
+               <div class="pin">
+               <p>&#128204</p>
+               <div class="mas_info">
+               <h3><%= link_to "+Info", wine_experience_path(experience), class: "btn btn-primary" %></h3>
+               </div>
+               </div>
+               <div class="price">
+               <h2 class="card-trip-pricing"><%= experience.price %> Pesos.</h2>
+               </div>
+               <img src="https://avatars0.githubusercontent.com/u/65079282?v=4" class="card-trip-user avatar-bordered">
               </div>
-                <h2><%= link_to experience.title, wine_experience_path(experience), class: "text-decoration-none text-light" %></h2>
-            <% else %>
-              <div class="card text-center" style="background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('https://www.millbrookwine.com/wp-content/uploads/2020/03/Millbrook-Wine_Pinot-Noir_2015.jpg')">
-              </div>
-                <h2><%= link_to experience.title, wine_experience_path(experience), class: "text-decoration-none text-light" %></h2>
-            <% end %>
           </div>
         </div>
-      <% end %>
+            <% end %>
+  </div>
+ 
+    <div class="container">
+      <div class ="map-header">
+        <h4>¡Todas las ubicaciones!</h4> 
+        <h5>A donde vayas el buen vino te acompaña... &#128747 &#9973 &#128757 &#127870</h5>
+      </div>
+      <div id="map"
+        style="width: 100%; height: 500px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
+ 
+  
 
   </div>
+
+
+
+<div class="footer">
+  <div class="footer-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+      «El vino siembra poesía en los corazones.» Dante Alighieri. <i class="fas fa-heart"></i> WINO
+  </div>
 </div>
+  
