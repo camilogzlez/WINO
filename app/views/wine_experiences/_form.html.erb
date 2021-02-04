@@ -4,7 +4,7 @@
         <%= f.input :description, as: :text, class:"label" %>
         <%= f.input :address %>
         <%= f.input :price, as: :numeric %>
-        <%= f.input :date %>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
         <%= f.submit "Submit", disable_with: 'Submiting...', class: "btn btn-success" %>
