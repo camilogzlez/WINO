@@ -4,8 +4,10 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
+  width: 100%;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  position:absolute; z-index:3;
 }
 .footer-links {
   display: flex;

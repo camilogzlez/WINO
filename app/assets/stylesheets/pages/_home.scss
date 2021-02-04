@@ -45,14 +45,14 @@ p {
 h5.carrousel-title{
   font-size: 4.25rem;
   font-family: Montserrat;
-  margin-top: 13rem;
+  // margin-top: 13rem;
   color: #fff;
 }
 
 p.carrousel-p{
   font-size: 2.25rem;
   font-family: Montserrat;
-  padding-bottom: 10rem; 
+  // padding-bottom: 10rem; 
   color: #fff;
 }
 
@@ -60,6 +60,17 @@ p.carrousel-p{
   margin-top: 50px;
 }
 
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 256px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
 .row{
   justify-content:center;
 }
@@ -126,14 +137,14 @@ a:hover{
    h5{
       font-family: Montserrat;
       font-size: 1.4rem;
-      color: #400bbb;
+      color: #167FFB;
    }
 }
 
-.btn-primary{
-  position: absolute;
-  bottom: 15%;
-  left: 40%;
+.btn.btn-info{
+  // position: absolute;
+  // bottom: 15%;
+  // left: 40%;
   background-color: rgba(255, 255, 255, 0.486);
   border: none;
   font-family: Montserrat;
@@ -141,4 +152,54 @@ a:hover{
   border-radius: 8px;
   padding: 5 5;
   color: white;
+
+}
+    .btn.btn-info:hover{
+    background-color: #167FFB;
+  
+  }
+  
+
+.d-none {
+    display: block!important;
+}
+    
+
+@media (max-width: 800px) {
+   
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 137px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+}
+
+@media (max-width: 590px) {
+   
+h5.carrousel-title{
+  font-size: 3.25rem;
+  font-family: Montserrat;
+  // margin-top: 13rem;
+  color: #fff;
+}
+p.carrousel-p{
+  font-size: 1.25rem;
+  font-family: Montserrat;
+  // padding-bottom: 10rem; 
+  color: #fff;
+}
+
+}
+
+
+@media (max-width: 590px) {
+html {
+    width: 584px;
+}
 }
