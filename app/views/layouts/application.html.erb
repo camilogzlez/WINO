@@ -12,25 +12,10 @@
   </head>
 
   <body>
+    <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
 
-    <div style="background-color: #880306">
-      <div class="container p-5">
-      <p style="background-color: #FDEDEC">Con Wine Experience vivís la experiencia de cata de tus vinos preferidos de la manera más segura y cómoda. Encontrá las mejores bodagas y los vinos más exquisitos, compartiendo un día con la mejor compañía.</p>
-        <%= render 'shared/flashes' %>
-      </div>
-    </div>
-    
     <%= yield %>
 
-  <div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
-  <div class="footer-copyright">
-    «El vino siembra poesía en los corazones.» Dante Alighieri. <i class="fas fa-heart"></i> WINO
-  </div>
   </body>
 </html>
