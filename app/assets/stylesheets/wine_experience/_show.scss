@@ -1,18 +1,22 @@
 .buy-button{
-  margin-left: 40px;
+  background-color: gray;
+    border-color: #56070C;
+    width: 149px;
+    padding: 5px;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 0 5px black;
 }
-
 
 .btn-rojo {
   background-color: #56070C;
-  border-color: #56070C;
-  margin-left: 50%;
-  margin-top: 25px;
-  width: 125px;
-  padding: 24px;
-  margin-bottom: 15px;
-  color: lavenderblush;
-  font-size: 20px;
+    border-color: #56070C;
+    margin-left: 35%;
+    margin-top: 15px;
+    width: 149px;
+    padding: 5px;
+    margin-bottom: 15px;
+    color: white;
 }
 
 h6.date{
@@ -41,6 +45,6 @@ p.description {
     font-size: 14px;
 }
 
-p{
-  color: #56070C;
+a:hover {
+  text-decoration: none;
 }
