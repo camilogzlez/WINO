@@ -22,7 +22,7 @@ puts "Creando Wine Experiences"
  rutini = WineExperience.create!(
   title: "Bodega Rutini malbec tasting", 
   description: "pruebe los vinos de la bodega ....", 
-  date: Date.new(2021, 2, 14), 
+  date: Date.new(2021, 2, 14, 18), 
   price: 1500, 
   owner: natalia, 
   address: Faker::Address.street_address
@@ -43,7 +43,7 @@ rutini_photos_info.each do |photo_info|
 end
 rutini.save!
     
-francia = WineExperience.create!(title: "Vinos del Sur de Francia", description: "Realize un viaje a traves de los vinos ....", date: Date.new(2021, 3, 4), price: 5000, owner: facundo, address: Faker::Address.street_address)
+francia = WineExperience.create!(title: "Vinos del Sur de Francia", description: "Realize un viaje a traves de los vinos ....", date: Date.new(2021, 3, 4, 19), price: 5000, owner: facundo, address: Faker::Address.street_address)
 
 francia_photos_info = [{
   url: "https://www.altonivel.com.mx/assets/images/templates/notas/anteriores/0000231045.jpg",
@@ -61,7 +61,7 @@ end
 francia.save!
 
 
-cafayate = WineExperience.create!(title: "Vinos del Cafayate ", description: "Deleitese con vinos de talla mundial ....", date: Date.new(2021, 2, 20), price: 1800, owner: camilo, address: Faker::Address.street_address)
+cafayate = WineExperience.create!(title: "Vinos del Cafayate ", description: "Deleitese con vinos de talla mundial ....", date: Date.new(2021, 2, 20, 17), price: 1800, owner: camilo, address: Faker::Address.street_address)
 
 cafayate_photos_info = [{
   url: "http://www.saltargentina.com.ar/wp-content/uploads/2019/04/artistica-varietal.jpg",
@@ -86,7 +86,7 @@ cafayate_photos_info.each do |photo_info|
 end
 cafayate.save!
 
-fin_del_mundo = WineExperience.create!(title: "Bodega Fin del Mundo", description: "Descubrí nuestros vinos: La inmensidad de la Patagonia en todos nuestros vinos.", date: Date.new(2021, 4, 20), price: 5020, owner: camilo, address: Faker::Address.street_address)
+fin_del_mundo = WineExperience.create!(title: "Bodega Fin del Mundo", description: "Descubrí nuestros vinos: La inmensidad de la Patagonia en todos nuestros vinos.", date: Date.new(2021, 4, 20, 19), price: 5020, owner: camilo, address: Faker::Address.street_address)
 
 fin_del_mundo_photos_info = [{
   url: "http://www.saltargentina.com.ar/wp-content/uploads/2019/04/artistica-varietal.jpg",
@@ -111,7 +111,7 @@ fin_del_mundo_photos_info.each do |photo_info|
 end
 fin_del_mundo.save!
 
-mosquita_muerta = WineExperience.create!(title: "Bodega Mosquita Muerta", description: "Blends Premium.", date: Date.new(2021, 2, 27), price: 3700, owner: facundo, address: Faker::Address.street_address)
+mosquita_muerta = WineExperience.create!(title: "Bodega Mosquita Muerta", description: "Blends Premium.", date: Date.new(2021, 2, 27, 19), price: 3700, owner: facundo, address: Faker::Address.street_address)
 
 mosquita_muerta_photos_info = [{
   url: "https://http2.mlstatic.com/D_NQ_NP_838898-MLA31065849993_062019-O.jpg",
@@ -132,7 +132,7 @@ mosquita_muerta_photos_info.each do |photo_info|
 end
 mosquita_muerta.save!
 
-rubino = WineExperience.create!(title: "Bodega Familia Rubino", description: "Promoción San Valentin Vinos", date: Date.new(2021, 2, 14), price: 4620, owner: camilo, address: Faker::Address.street_address)
+rubino = WineExperience.create!(title: "Bodega Familia Rubino", description: "Promoción San Valentin Vinos", date: Date.new(2021, 2, 14, 18), price: 4620, owner: camilo, address: Faker::Address.street_address)
 
 rubino_photos_info = [{
   url: "https://www.pasionporelvino.com/pub/media/catalog/product/cache/image/265x265/beff4985b56e3afdbeabfc89641a4582/o/4/o4uf6owtqnazammy25wmfw_pl_375x500.png",
@@ -153,7 +153,7 @@ rubino_photos_info.each do |photo_info|
 end
 rubino.save!
 
-garufa = WineExperience.create!(title: "Garufa Wines", description: "Algo distinto, algo especial, algo que este presente en tus momentos de éxito, por eso te hacemos llegar esta cata de gran nivel.", date: Date.new(2021, 3, 25), price: 4800, owner: natalia, address: Faker::Address.street_address)
+garufa = WineExperience.create!(title: "Garufa Wines", description: "Algo distinto, algo especial, algo que este presente en tus momentos de éxito, por eso te hacemos llegar esta cata de gran nivel.", date: Date.new(2021, 3, 25, 18), price: 4800, owner: natalia, address: Faker::Address.street_address)
 
 garufa_photos_info = [{
   url: "https://3.bp.blogspot.com/-AUfg1EyMKLw/UNKD7GBosVI/AAAAAAAAlPA/si9w4MhRQiE/s1600/GARUFA-potw+(2).jpg",
@@ -174,7 +174,7 @@ garufa_photos_info.each do |photo_info|
 end
 garufa.save!
 
-nieto_senetiner = WineExperience.create!(title: "Bodega Nieto Senetiner", description: "Las labores de todo un año se ponen a punto, para ofrecerte una experiencia única e irrepetible.", date: Date.new(2021, 4, 25), price: 2700, owner: facundo, address: Faker::Address.street_address)
+nieto_senetiner = WineExperience.create!(title: "Bodega Nieto Senetiner", description: "Las labores de todo un año se ponen a punto, para ofrecerte una experiencia única e irrepetible.", date: Date.new(2021, 4, 25, 19), price: 2700, owner: facundo, address: Faker::Address.street_address)
 
 nieto_senetiner_photos_info = [{
   url: "http://d26lpennugtm8s.cloudfront.net/stores/812/913/products/nieto-cabernet-sauvignon-20181-897da06b1c90d390e115524917954526-640-0.jpg",
@@ -195,7 +195,7 @@ nieto_senetiner_photos_info.each do |photo_info|
 end
 nieto_senetiner.save!
 
-lopez = WineExperience.create!(title: "Bodegas López", description: "Vinos de cosechas únicas, ideales para generar ocasiones inolvidables.", date: Date.new(2021, 4, 17), price: 7500, owner: natalia, address: Faker::Address.street_address)
+lopez = WineExperience.create!(title: "Bodegas López", description: "Vinos de cosechas únicas, ideales para generar ocasiones inolvidables.", date: Date.new(2021, 4, 17, 20), price: 7500, owner: natalia, address: Faker::Address.street_address)
 
 lopez_photos_info = [{
   url: "https://bodegaslopez.com.ar/wp-content/uploads/2019/08/slide-nuevas-cosechas-2019-1.jpg",
