@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :bookings
-  has_many :wine_experiences
-  has_many :reservations, through: :wine_experiences, source: :bookings
+  has_many :wine_experiences, dependent: :nullify
+  has_many :reservations, through: :wine_experiences, source: :bookings, dependent: :destroy
 end

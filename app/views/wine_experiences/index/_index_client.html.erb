@@ -1,0 +1,69 @@
+
+<%= render 'shared/navbar' %>
+ 
+  <div >
+  <h2 class= "index-message"> TODAS LAS EXPERIENCIAS &#127863; </h2>
+ 
+  </div>
+<div class ="supercontainer">
+<div class="row">
+      <% @wine_experiences.each do |experience| %>
+        <div>
+          <div class="index-card">
+            <% if experience.photos.attached? %>
+             <%= cl_image_tag experience.photos.first.key, style:"background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))", class: "f" %>
+               <% else %>
+                 <img class="f" src="https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fHdpbmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Card image cap" ,style ="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"> 
+               <% end %>
+             <div class="card-product-infos">
+             
+               <h2><%= link_to experience.title, wine_experience_path(experience) %></h2>
+               <p class="index-card-description"><%= experience.description %></p>
+               <p>&#128349 2hs</p>
+               <p>&#10004 Cancelación gratuita</p>
+               <p>&#128172 Español/Ingles</p>
+               <div class="pin">
+               <p>&#128204</p>
+               <div class="mas_info">
+               <h3><%= link_to "+Info", wine_experience_path(experience), class: "btn btn-gray" %></h3>
+               </div>
+               </div>
+               <div class="price">
+               <h2 class="card-trip-pricing"><%= experience.price %> Pesos.</h2>
+               </div>
+               <img src="https://avatars0.githubusercontent.com/u/65079282?v=4" class="card-trip-user avatar-bordered">
+              </div>
+          </div>
+        </div>
+            <% end %>
+  </div>
+ 
+    <div class="container">
+      <div class ="map-header">
+        <h4>¡Todas las ubicaciones!</h4> 
+        <h5>A donde vayas el buen vino te acompaña... &#128747 &#9973 &#128757 &#127870</h5>
+      </div>
+      <div id="map"
+        style="width: 100%; height: 500px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+ 
+  
+
+  </div>
+
+
+
+<div class="footer">
+  <div class="footer-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+      «El vino siembra poesía en los corazones.» Dante Alighieri. <i class="fas fa-heart"></i> WINO
+  </div>
+</div>
+  

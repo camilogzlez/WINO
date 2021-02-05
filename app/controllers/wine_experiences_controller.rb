@@ -5,9 +5,11 @@ class WineExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @wine_experiences = WineExperience.all
-
-
+    if current_user.owner
+      @wine_experiences = policy_scope(WineExperience).where(user_id: current_user.id)
+    else
+      @wine_experiences = policy_scope(WineExperience)
+    end
   end
 
   def show
@@ -21,6 +23,7 @@ class WineExperiencesController < ApplicationController
 
   def new
     @wine_experience = WineExperience.new()
+    authorize @wine_experience
   end
 
   def create
