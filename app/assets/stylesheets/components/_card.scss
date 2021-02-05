@@ -1,0 +1,96 @@
+.card-trip {
+  margin: auto;
+  margin-top: 40px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // max-width: 1200px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.card-trip-img {
+  height: 100%;
+  width: 80%;
+  object-fit: content;
+  object-position: center;
+}
+
+.card-trip h2 {
+  font-size: 30px;
+  font-weight: bolder;
+  margin: 0;
+  padding-bottom: 45px;
+  justify-content: center;
+  text-shadow: black;
+  font-family: Monserrat;
+}
+
+.card-trip h6 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 40px;
+  font-family: Monserrat;
+}
+
+
+.card-trip p {
+  font-size: 17px;
+  font-weight: bolder;
+  // opacity: .7;
+  margin-bottom: 0px;
+  text-shadow: black;
+  text-indent: wrap;
+  font-family: Monserrat;
+  padding-bottom: 40px;
+}
+
+.wine-description {
+  font-size: 20px;
+  padding-bottom: 40px;
+}
+
+.card-trip .card-trip-infos {
+  // padding-left: 20px;
+  padding-top: 5px;
+  // display: flex;
+  position: absolute;
+  right: 50px;
+}
+
+.card-trip-infos .card-trip-pricing {
+  // position: absolute;
+  right: 40px;
+  width: 40px;
+  font-weight: bolder;
+  padding: 15px;
+  font-size: 20px;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.card {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(20, 20, 20);
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+  margin-bottom: 20px;
+}

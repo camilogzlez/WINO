@@ -1,61 +1,22 @@
-
-.card-trip {
-  margin: auto;
-  margin-top: 40px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  max-width: 800px;
-  border-radius: 5px;
-  
-}
-
-.card-trip > img {
-  height: 400px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
- 
-}
-
-
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
 .buy-button{
-  margin-left: 40px;
+  background-color: gray;
+    border-color: #56070C;
+    width: 149px;
+    padding: 5px;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 0 5px black;
 }
 
-
-.btn-danger {
-    background-color: #56070C;
+.btn-rojo {
+  background-color: #56070C;
     border-color: #56070C;
-    margin-left: 83%;
-    width: 100px;
+    margin-left: 35%;
+    margin-top: 15px;
+    width: 149px;
+    padding: 5px;
     margin-bottom: 15px;
+    color: white;
 }
 
 h6.date{
@@ -84,6 +45,6 @@ p.description {
     font-size: 14px;
 }
 
-p{
-  color: #56070C;
+a:hover {
+  text-decoration: none;
 }

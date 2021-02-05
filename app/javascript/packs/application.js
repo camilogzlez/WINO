@@ -29,6 +29,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initflatpickr } from "../plugins/init_flatpickr";
 
 import "../plugins/init_flatpickr";
 
@@ -51,6 +52,7 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   initAutocomplete();
+  initflatpickr();
 
 });
 
