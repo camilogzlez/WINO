@@ -1,7 +1,10 @@
 .img-vino {
-  object-fit: cover;
-  align-items: center;
-  object-position: center;
-  display:inline-block;
-  margin:0 5px;
+ object-fit: cover;
+ object-position: center;
+ margin: 0;
+ flex-shrink: initial;
+}
+
+.carousel-control-next {
+  margin-top: 0;
 }

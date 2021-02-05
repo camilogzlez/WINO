@@ -1,12 +1,13 @@
+
 <div class="pb-3">
     <%= simple_form_for(wine_experience) do |f| %>
-        <%= f.input :title, class:"label" %>
-        <%= f.input :description, as: :text, class:"label" %>
-        <%= f.input :address %>
-        <%= f.input :price, as: :numeric %>
-        <%= f.input :date, as: :string, required: false, input_html: { class: "datepicker" } %>
+        <%= f.input :title, class:"label", placeholder: "Título de tu evento" %>
+        <%= f.input :description, as: :text, class:"label", placeholder: "Contanos de tu evento ... Cualquier detalle que enamore a las personas para que se sumen al evento." %>
+        <%= f.input :address, placeholder: "¿Dónde se desarrollará tu evento?" %>
+        <%= f.input :price, as: :numeric, placeholder: "¿Cuánto costará tu evento?" %>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "Agrega la fecha del evento" %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
-        <%= f.submit "Submit", disable_with: 'Submiting...', class: "btn btn-success" %>
+        <%= f.submit "Compartí tu evento", disable_with: 'Submiting...', class: "btn btn-success" %>
     <% end %>
 </div>

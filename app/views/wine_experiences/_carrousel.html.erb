@@ -1,17 +1,17 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
   
-    <div class="carousel-item active">
     <% if @wine_experience.photos[2] %>
-
-      <%= cl_image_tag @wine_experience.photos[0].key, alt: "First slide", class: "img-vino", height: 550  %>
-
+    <div class="carousel-item active">
+      
+      <%= cl_image_tag @wine_experience.photos[0].key, alt: "First slide", class: "d-flex justify-content-center", height: 550  %>
+      
       </div>
       <div class="carousel-item">
-      <%= cl_image_tag @wine_experience.photos[1].key, alt: "Second slide", class: "img-vino", height: 550   %>
+      <%= cl_image_tag @wine_experience.photos[1].key, alt: "Second slide", class: "d-flex justify-content-center", height: 550   %>
       </div>
       <div class="carousel-item">
-        <%= cl_image_tag @wine_experience.photos[2].key, alt: "Third slide", class: "img-vino", height: 550   %>
+        <%= cl_image_tag @wine_experience.photos[2].key, alt: "Third slide", class: "d-flex justify-content-center", height: 550   %>
       </div>
     <% end %>
   </div>
@@ -22,5 +22,3 @@
   <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
-</div>
