@@ -20,6 +20,12 @@ class WineExperiencesController < ApplicationController
       @wine_experiences = WineExperience.all
     end
 
+    @markers = @wine_experiences.geocoded.map do |experience|
+      {
+        lat: experience.latitude,
+        lng: experience.longitude
+      }
+    end
   end
 
   def show
@@ -27,7 +33,6 @@ class WineExperiencesController < ApplicationController
     @markers = [{
       lat: @wine_experience.latitude,
       lng: @wine_experience.longitude,
-      image_url: helpers.asset_url('wine-marker.png')
     }]
   end
 

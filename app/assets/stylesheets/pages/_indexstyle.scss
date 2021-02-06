@@ -28,7 +28,7 @@
   width: 40%;
   object-fit: cover;
   border-radius: 8px;
-  margin: 20px;
+  margin: 20px 7px;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
@@ -54,8 +54,8 @@
 
 
 .index-card .card-product-infos {
-  margin-top: 30px;
-  padding: 16px;
+  margin-top: 10px;
+  padding: 6px;
   display: flex;
    flex-direction: column;
    width: 400px;
@@ -67,8 +67,8 @@
 
 .card-product-infos .card-trip-user {
   position: absolute;
-  right: -6px;
-  top: -7px;
+  right: -50px;
+  top: 1px;
   width: 40px;
 }
 
@@ -96,21 +96,21 @@ h2.card-trip-pricing{
   }
 }
 
+.mas_info{
+  margin-top: 19px;
+}
 
-
-  .btn .btn-gray{
+  .btn.btn-info{
     background-color: rgba(128, 128, 128, 0.5);
     color: white;
     font-family: Montserrat;
     border-radius: 5px;
-    position: absolute;
-    left: 361px;
-    bottom: -195px;
   }
 
-   .btn.btn-gray:hover{
+   .btn.btn-info:hover{
     background-color: #167FFB;
   }
+
 
 .supercontainer{
 
@@ -208,18 +208,23 @@ h2.card-trip-pricing{
 
     .card-product-infos .card-trip-user {
     position: absolute;
-    right: 338px;
-    top: 2px;
+    right: 516px;
+    top: 24px;
     width: 40px;
 
     
 }
 
+.new_experience_link {
+ 
+    right: 147px;
+   
+}
 
   .price {
    
     right: 138px;
-    bottom: 21px;
+    bottom: 27px;
 }
 
 .footer {

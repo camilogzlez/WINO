@@ -16,3 +16,18 @@
 .navbar-lewagon .navbar-brand img {
   width: 120px;
 }
+
+
+  .new_experience_link{
+    position: absolute;
+    right: 80px;
+    font-family: Montserrat;
+    padding: 5px;
+    border-radius: 5px;
+  
+  }
+
+  .new_experience_link:hover{
+    background-color: rgba(27, 16, 16, 0.486);
+   color: white;
+  }
