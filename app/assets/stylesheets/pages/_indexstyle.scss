@@ -95,11 +95,22 @@ h2.card-trip-pricing{
     font-size: 20px;
   }
 }
+
 .mas_info{
-    position: absolute;
-    left: 349px;
-    top: 196px;
+  margin-top: 19px;
 }
+
+  .btn.btn-info{
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    font-family: Montserrat;
+    border-radius: 5px;
+  }
+
+   .btn.btn-info:hover{
+    background-color: #167FFB;
+  }
+
 
 .supercontainer{
 
