@@ -114,10 +114,12 @@ h2.card-trip-pricing{
  
 }
 
-.container{
+
+.container-map{
+
   width: 800px;
   position: fixed; /* Set the navbar to fixed position */
- right: 144px;
+  right: 144px;
 
 }
 
@@ -149,7 +151,7 @@ h2.card-trip-pricing{
   }
 
   @media (max-width: 1334px) {
-        .container {
+        .my-container {
           display: none;
         }
       }
@@ -157,19 +159,19 @@ h2.card-trip-pricing{
   
 
        @media (max-width: 1790px) {
-        .container {
+        .my-container {
         width: 600px;
         }
       }
 
             @media (max-width: 1588px) {
-        .container {
+        .my-container {
           width: 500px;
         }
       }
        
            @media (max-width: 1488px) {
-    .container {
+    .my-container {
           width: 300px;
         }
    .supercontainer .row {
