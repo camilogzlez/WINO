@@ -1,16 +1,12 @@
 
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon justify-content-right">
     <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag("https://res.cloudinary.com/camilogzlez/image/upload/v1612189859/WINO/Logo_Nuevo_d7oiez.png") %>
     <% end %>
-
+  <%= link_to "Crea una experiencia", new_wine_experience_path, class: "new_experience_link text-decoration-none" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <%= link_to new_wine_experience_path do  %>
-      <button type="button" class="btn btn-outline-secondary shadow-sm">¡COMPARTÍ TU WINE EXPERIENCE AHORA!</button>
-    <% end %>
-    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
