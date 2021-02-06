@@ -128,7 +128,7 @@ h2.card-trip-pricing{
 .container-map{
 
   width: 800px;
-  position: fixed; /* Set the navbar to fixed position */
+  // position: fixed; /* Set the navbar to fixed position */
   right: 144px;
 
 }
@@ -144,13 +144,10 @@ h2.card-trip-pricing{
     top:0;
   }
   #index-map{
-    position: fixed;
+    position: absolute;
     top: 241px;
     right: 66px;
-    }
-
-    
-
+  }
 
   .map-header{
     margin-top:12px;
@@ -264,7 +261,7 @@ h2.card-trip-pricing{
   }
 
   .footer {
-    padding: 0px 40px;
+    // padding: 0px 40px;
     width: 590px;
   }
   .nav-item.dropdown{
