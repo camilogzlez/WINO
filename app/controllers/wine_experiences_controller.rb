@@ -4,8 +4,21 @@ class WineExperiencesController < ApplicationController
   before_action :experience_by_params_id, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index]
 
+  
+
   def index
-    @wine_experiences = WineExperience.all
+    # @wine_experiences = WineExperience.all
+
+    if params[:query].present?
+      # @wine_experiences = WineExperience.where("address ILIKE ? or date ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+      sql_query = " \
+        wine_experiences.address @@ :query \
+        OR wine_experiences.title @@ :query \ 
+      "
+      @wine_experiences = WineExperience.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @wine_experiences = WineExperience.all
+    end
 
     @markers = @wine_experiences.geocoded.map do |experience|
       {
