@@ -24,7 +24,7 @@ class WineExperiencesController < ApplicationController
       @collected = Booking.all.where(wine_experience_id: @wine_experience.id).count
       @collected *= @wine_experience.price
       
-      @users = User.all
+      # @users = @wine_experience.bookings.users
     end
   end
 

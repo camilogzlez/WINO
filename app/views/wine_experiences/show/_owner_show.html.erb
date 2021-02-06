@@ -62,10 +62,10 @@
       <div class="p-5">
       
         <ul class="list-group list-group-flush">
-          <% @users.each do |user| %>
+          <% @wine_experience.bookings.each do |booking| %>
             <li class="list-group-item">
               <div class="d-flex justify-content-between">
-                <%= user.email%>
+                <%= booking.client.email %>
                 <%= link_to "Cancel", wine_experiences_path, class:"btn btn-outline-danger rounded" %>
               </div>
             </li>

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :bookings
   has_many :wine_experiences, dependent: :nullify
-  has_many :reservations, through: :wine_experiences, source: :bookings, dependent: :destroy
+  has_many :bookings, through: :wine_experiences, as: :client
+  # has_many :reservations, through: :wine_experiences, source: :bookings, dependent: :destroy
 end
