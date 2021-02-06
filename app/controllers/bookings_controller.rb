@@ -2,10 +2,13 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
   
   def create
     @booking = Booking.new
+    authorize @booking
+
     @wine_experience = WineExperience.find(params[:wine_experience_id])
     @booking.wine_experience = @wine_experience
     @booking.client = current_user

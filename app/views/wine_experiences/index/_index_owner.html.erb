@@ -1,11 +1,21 @@
-<%= @wine_experiences.each do |experience| %>
+<div class="container">
+  <h1>Todas tus publicaciones!!</h1>
+  <% @wine_experiences.each do |experience| %>
 
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2><%= experience.title %></h2>
-      <p><%= experience.description %></p>
+    <div class="card-product mt-3 mb-3">
+      <%= cl_image_tag experience.photos[0].key, class:"my-img", crop: :fill %>
+      <div class="card-product-infos d-flex justify-content-between" style="width:100%">
+        <div>
+          <h2><%= experience.title %></h2>
+        </div>
+        <div>
+          <%= link_to "All details", wine_experience_path(experience), class:"btn btn-primary rounded" %>
+          <%= link_to "Delete", wine_experience_path(experience), method: :delete, class:"btn btn-outline-danger rounded", data: { confirm: "Are you sure?" } %>
+          <%= link_to "Edit", edit_wine_experience_path(experience), class:"btn btn-secondary rounded" %>
+        </div>
+      </div>
     </div>
-  </div>
 
-<% end %>
+  <% end %>
+
+</div>

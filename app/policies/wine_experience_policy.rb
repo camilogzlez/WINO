@@ -13,4 +13,16 @@ class WineExperiencePolicy < ApplicationPolicy
     user.owner
   end
 
+  def show?
+    true
+  end
+
+  def update?
+    user.owner
+  end
+
+  def destroy?
+    user.owner
+  end
+
 end
