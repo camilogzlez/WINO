@@ -128,7 +128,7 @@ h2.card-trip-pricing{
 .container-map{
 
   width: 800px;
-  position: fixed; /* Set the navbar to fixed position */
+  // position: fixed; /* Set the navbar to fixed position */
   right: 144px;
 
 }
@@ -140,6 +140,13 @@ h2.card-trip-pricing{
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     z-index:0;
+    position: sticky;
+    top:0;
+  }
+  #index-map{
+    position: absolute;
+    top: 241px;
+    right: 66px;
   }
 
   .map-header{
@@ -160,87 +167,118 @@ h2.card-trip-pricing{
     }
   }
 
-  @media (max-width: 1334px) {
-        .my-container {
-          display: none;
-        }
-      }
+@media (max-width: 1334px) {
+  .my-container {
+    display: none;
+  }
+   #index-map{
+    display: none;
+  }
+  .card-container{
+    width: 100%;
+  }
+}
 
   
 
-       @media (max-width: 1790px) {
-        .my-container {
-        width: 600px;
-        }
-      }
+@media (max-width: 1790px) {
+  .my-container {
+    width: 600px;
+  }
 
-            @media (max-width: 1588px) {
-        .my-container {
-          width: 500px;
-        }
-      }
+  .card-container{
+    width: 100%;
+  }
+  
+}
+
+
+@media (max-width: 1588px) {
+  .my-container {
+    width: 500px;
+  }
+  #index-map{
+    display: none;
+  }
+  .card-container{
+    width: 100%;
+  }
+}
        
-           @media (max-width: 1488px) {
-    .my-container {
-          width: 300px;
-        }
-   .supercontainer .row {
-    margin-left: -250px;
-}
-      }
 
-    @media (max-width: 1074px) {
-   
-   .supercontainer .row {
+@media (max-width: 1650px) {
+ 
+  #index-map{
+    display: none;
+  }
+
+}
+@media (max-width: 1488px) {
+  .my-container {
+    width: 300px;
+  }
+  .supercontainer .row {
+    margin-left: -250px; 
+  }
+  #index-map{
+    display: none;
+  }
+  .card-container{
+    width: 100%;
+  }
+}
+
+@media (max-width: 1074px) {
+  .supercontainer .row {
     margin-left: -2px;
+  }
+   #index-map{
+    display: none;
+  }
+  .card-container{
+    width: 100%;
+  }
 }
-      }
 
-          @media (max-width: 818px) {
-   
+@media (max-width: 818px) {
   .index-card {
-   
     width: 568px;
-
-}
-
-
-    .card-product-infos .card-trip-user {
+  }
+  .card-product-infos .card-trip-user {
     position: absolute;
     right: 516px;
     top: 24px;
-    width: 40px;
+    width: 40px;  
+  }
 
-    
-}
-
-.new_experience_link {
- 
-    right: 147px;
-   
-}
+  .new_experience_link {
+   right: 147px;
+   }
 
   .price {
-   
     right: 138px;
     bottom: 27px;
-}
+  }
 
-.footer {
-   
-    padding: 0px 40px;
-  
+  .footer {
+    // padding: 0px 40px;
     width: 590px;
-}
-.nav-item.dropdown{
+  }
+  .nav-item.dropdown{
     position: fixed;
     right: 96px;
     top: 30px;
-}
-.index-message{
-  width: 590px;
-  
-}
+  }
+  .index-message{
+    width: 590px;
+  }
+
+  #index-map{
+    display: none;
+  }
+  .card-container{
+    width: 100%;
+  }
 }
 
 
@@ -262,3 +300,4 @@ h2.card-trip-pricing{
     margin-left: -2px;
 }
 }
+
