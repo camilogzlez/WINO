@@ -13,9 +13,9 @@ Booking.destroy_all
 User.destroy_all
 
 puts "Creando tres owners"
-natalia = User.create!(email: "gattinati.ng@gmail.com", password: "gattinati", owner: false)
-facundo = User.create!(email: "facundolanus@gmail.com", password: "facundolanus", owner: true)
-camilo = User.create!(email: "camilogzlez@gmail.com", password: "camilogzlez", owner: false)
+natalia = User.create!(email: "gattinati.ng@gmail.com", password: "gattinati")
+facundo = User.create!(email: "facundolanus@gmail.com", password: "facundolanus")
+camilo = User.create!(email: "camilogzlez@gmail.com", password: "camilogzlez")
 
 puts "Creando Wine Experiences"
 
