@@ -4,7 +4,7 @@
   width: 100%;
   height: 100px;
    overflow: visible;
-  position: fixed; /* Set the navbar to fixed position */
+  position: sticky; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
  z-index: 1;
  
@@ -17,3 +17,18 @@
 .navbar-lewagon .navbar-brand img {
   width: 120px;
 }
+
+
+  .new_experience_link{
+    position: absolute;
+    right: 80px;
+    font-family: Montserrat;
+    padding: 5px;
+    border-radius: 5px;
+  
+  }
+
+  .new_experience_link:hover{
+    background-color: rgba(27, 16, 16, 0.486);
+   color: white;
+  }

@@ -6,7 +6,7 @@
  
   </div>
 <div class ="supercontainer">
-<div class="row">
+<div class="row justify-content-center">
       <% @wine_experiences.each do |experience| %>
         <div>
           <div class="index-card">
@@ -25,7 +25,7 @@
                <div class="pin">
                <p>&#128204</p>
                <div class="mas_info">
-               <h3><%= link_to "+Info", wine_experience_path(experience), class: "btn btn-gray" %></h3>
+               <h3><%= link_to "+Info", wine_experience_path(experience), class: "btn btn-info" %></h3>
                </div>
                </div>
                <div class="price">
