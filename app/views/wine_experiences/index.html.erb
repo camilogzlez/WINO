@@ -17,7 +17,7 @@
   </div> 
   
   <div class ="supercontainer">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center card-container">
       <% @wine_experiences.each do |experience| %>
         <div>
           <div class="index-card">
@@ -49,19 +49,19 @@
     </div>
   </div>
 </div>
-
+<div id="index-map">
     <div class="container">
       <div class ="map-header">
         <h4>¡Todas las ubicaciones!</h4> 
         <h5>A donde vayas el buen vino te acompaña... &#128747 &#9973 &#128757 &#127870</h5>
       </div>
       <div id="map"
-        style="width: 100%; height: 500px;"
+        style="width: 700px; height: 350px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-
-
+  </div>
+  </div>
 <div class="footer">
   <div class="footer-links">
       <a href="#"><i class="fab fa-instagram"></i></a>
