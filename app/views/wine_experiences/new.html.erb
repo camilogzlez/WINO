@@ -1,7 +1,12 @@
 <% if policy(WineExperience).create? %>
-  <div class="container">
-    <h1 class="text-center pt-3">Agrega tu Wine Experience aquí</h1>
-    <%= render 'form', wine_experience: @wine_experience %>
+  <div class="bg-img" style="background-image: url('https://wallpapercave.com/wp/wp2878157.jpg');">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="text-center pt-3 text-white ">Agrega tu Wine Experience aquí</h1>
+          <%= render 'form', wine_experience: @wine_experience %>
+        </div>
+      </div>
+    </div>
   </div>
-
 <% end %>

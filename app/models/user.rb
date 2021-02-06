@@ -6,5 +6,5 @@ class User < ApplicationRecord
   
   has_many :wine_experiences, dependent: :nullify
   has_many :bookings, through: :wine_experiences, as: :client
-  # has_many :reservations, through: :wine_experiences, source: :bookings, dependent: :destroy
+  has_many :reservations, through: :wine_experiences, source: :bookings, dependent: :destroy
 end

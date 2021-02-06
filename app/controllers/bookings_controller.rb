@@ -19,4 +19,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:wine_experience_id])
+    @booking.destroy
+    authorize @booking
+    redirect_to wine_experiences_path
+  end
+
 end

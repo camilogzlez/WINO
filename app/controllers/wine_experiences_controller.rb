@@ -4,11 +4,37 @@ class WineExperiencesController < ApplicationController
   before_action :experience_by_params_id, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index]
 
+  
+
   def index
-    if current_user.owner
-      @wine_experiences = policy_scope(WineExperience).where(user_id: current_user.id)
+    # @wine_experiences = WineExperience.all
+
+    if params[:query].present?
+      # @wine_experiences = WineExperience.where("address ILIKE ? or date ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+      sql_query = " \
+        wine_experiences.address @@ :query \
+        OR wine_experiences.title @@ :query \ 
+      "
+
+      if current_user.owner
+        @wine_experiences = policy_scope(WineExperience).where(user_id: current_user.id).where(sql_query, query: "%#{params[:query]}%")
+      else
+        @wine_experiences = policy_scope(WineExperience).where(sql_query, query: "%#{params[:query]}%")
+      end
+
     else
-      @wine_experiences = policy_scope(WineExperience)
+      if current_user.owner
+        @wine_experiences = policy_scope(WineExperience).where(user_id: current_user.id)
+      else
+        @wine_experiences = policy_scope(WineExperience)
+      end
+    end
+
+    @markers = @wine_experiences.geocoded.map do |experience|
+      {
+        lat: experience.latitude,
+        lng: experience.longitude
+      }
     end
   end
 
@@ -17,7 +43,6 @@ class WineExperiencesController < ApplicationController
     @markers = [{
       lat: @wine_experience.latitude,
       lng: @wine_experience.longitude,
-      image_url: helpers.asset_url('wine-marker.png')
     }]
 
     if current_user.owner
@@ -36,6 +61,7 @@ class WineExperiencesController < ApplicationController
   def create
     @wine_experience = WineExperience.new(wine_experience_params)
     @wine_experience.owner = current_user
+    authorize @wine_experience
     if @wine_experience.save
       redirect_to wine_experience_path(@wine_experience)
     else

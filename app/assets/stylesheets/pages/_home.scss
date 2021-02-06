@@ -57,7 +57,7 @@ p.carrousel-p{
 }
 
 .carousel-control-next{
-  margin-top: 50px;
+  margin-top: 102px;
 }
 
 .carousel-caption {
@@ -135,17 +135,12 @@ a:hover{
 }
 
 .btn.btn-info{
-  // position: absolute;
-  // bottom: 15%;
-  // left: 40%;
-  background-color: rgba(255, 255, 255, 0.486);
   border: none;
   font-family: Montserrat;
   font-size: 1.2rem;
   border-radius: 8px;
   padding: 5 5;
   color: white;
-
 }
     .btn.btn-info:hover{
     background-color: #167FFB;
@@ -191,8 +186,8 @@ p.carrousel-p{
 }
 
 
-@media (max-width: 590px) {
-html {
-    width: 584px;
-}
-}
+// @media (max-width: 590px) {
+// html {
+//     width: 584px;
+// }
+// }
